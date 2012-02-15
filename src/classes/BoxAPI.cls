@@ -361,7 +361,7 @@ public class BoxAPI {
         if (!Test.isRunningTest()) {
             doc = boxCallout(endpoint + '?action=rename&api_key=' + apiKey +
                             '&auth_token=' + systemAuthToken + '&target=' + target + '&target_id=' + targetId + 
-                            'new_name=' + newName);
+                            '&new_name=' + newName);
         } else {
             doc.load('<?xml version=\'1.0\' encoding=\'UTF-8\'?><response><status>s_rename_node</status></response>');
         }
