@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Used to store OAuth settings</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AuthEndpoint__c</fullName>
+        <description>The OAuth endpoint.</description>
+        <externalId>false</externalId>
+        <label>Auth Endpoint</label>
+        <required>true</required>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>ClientId__c</fullName>
+        <externalId>false</externalId>
+        <label>Client ID</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ClientSecret__c</fullName>
+        <externalId>false</externalId>
+        <label>Client Secret</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>OAuth Settings</label>
+</CustomObject>

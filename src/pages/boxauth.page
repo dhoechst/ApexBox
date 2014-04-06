@@ -1,0 +1,17 @@
+<apex:page controller="BoxAuth" action="{!checkCode}">
+	<apex:form >
+		<apex:pageMessages />
+		<apex:pageBlock >
+			<apex:pageBlockSection columns="1">
+				<apex:outputPanel rendered="{!isAuthorized}" >
+			  	<apex:outputText >You have a valid authentication code with Box. Logged in as:&nbsp;</apex:outputText>
+			  	<apex:image value="{!currentUser.avatar_url}" />
+			  	<apex:outputText value="{!currentUser.login}" />
+			  </apex:outputPanel>
+			  <apex:outputText rendered="{!!isAuthorized}" >Looks like you need to authenticate.</apex:outputText>
+		  </apex:pageBlockSection>
+	  <apex:commandButton action="{!requestToken}" value="Authorize with Box"/>
+	  <apex:commandButton action="{!revokeToken}" value="Revoke Token"/>
+	  </apex:pageBlock>
+  </apex:form>
+</apex:page>

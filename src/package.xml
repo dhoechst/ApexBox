@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>BoxAPI</members>
-        <members>BoxAPITest</members>
+        <members>BoxAuth</members>
         <members>BoxException</members>
-        <members>BoxObject</members>
+        <members>BoxObject2</members>
+        <members>OAuthSettings</members>
         <name>ApexClass</name>
     </types>
     <types>
-        <members>BoxDefaults__c</members>
+        <members>boxauth</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Box_OAuth__c</members>
+        <members>OAuthSettings__c</members>
         <name>CustomObject</name>
     </types>
-    <version>19.0</version>
+    <version>28.0</version>
 </Package>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Stores each user&apos;s authentication token for Box</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>AuthTokenExpires__c</fullName>
+        <description>Date/Time the auth token expires. If expired and the refresh token is still valid, then a refresh will be needed to get a new auth token.</description>
+        <externalId>false</externalId>
+        <label>Auth Token Expires</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Auth_Token__c</fullName>
+        <description>The User&apos;s Auth Token</description>
+        <externalId>false</externalId>
+        <label>Auth Token</label>
+        <length>255</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RefreshTokenExpires__c</fullName>
+        <description>Date / Time the Refresh Token expires. If expired, then the user will need to reauthenticate with Box.</description>
+        <externalId>false</externalId>
+        <label>Refresh Token Expires</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Refresh_Token__c</fullName>
+        <externalId>false</externalId>
+        <label>Refresh Token</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Box OAuth</label>
+</CustomObject>
