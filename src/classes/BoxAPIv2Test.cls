@@ -173,5 +173,13 @@ private class BoxAPIv2Test {
 		System.assertEquals('7522414694f97d171b6aea', BoxAPIv2.error.request_id);
 		System.assertEquals('', BoxAPIv2.error.help_url);
 	}
+
+	@isTest static void testGetFileDownloadLink() {
+		Test.startTest();
+		Test.setMock(HttpCalloutMock.class, new BoxMockHttpResponse());
+		PageReference pr = BoxAPIv2.getFileDownloadLink('1234');
+		Test.stopTest();
+		System.assertEquals('https://linktofile', pr.getUrl());
+	}
 	
 }

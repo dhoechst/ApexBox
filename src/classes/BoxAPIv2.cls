@@ -80,6 +80,7 @@ public with sharing class BoxAPIv2 {
 
     HttpResponse res = h.send(req);
     PageReference pr;
+    // Box returns a redirect to download the file
     if (res.getStatusCode() == 302) {
       pr = new PageReference(res.getHeader('Location'));
     }

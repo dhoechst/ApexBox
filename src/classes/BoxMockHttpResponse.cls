@@ -70,6 +70,12 @@ global class BoxMockHttpResponse implements HttpCalloutMock {
     	res.setStatusCode(403);
 		}
 
+		// file download link
+		if (req.getEndpoint().contains('files') && req.getEndpoint().contains('content')) {
+			res.setStatusCode(302);
+			res.setHeader('Location', 'https://linktofile');
+		}
+
 		return res;
 	}
 }
