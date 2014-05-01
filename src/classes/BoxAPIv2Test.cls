@@ -107,6 +107,13 @@ private class BoxAPIv2Test {
 		System.assertEquals('file', file.type);
 	}
 
+	@isTest static void testDeleteFile() {
+		Test.startTest();
+		Test.setMock(HttpCalloutMock.class, new BoxMockHttpResponse());
+		BoxAPIv2.deleteFile('12345');
+		Test.stopTest();
+	}
+
 	@isTest static void testGetCurrentUser() {
 		Test.startTest();
 		Test.setMock(HttpCalloutMock.class, new BoxMockHttpResponse());

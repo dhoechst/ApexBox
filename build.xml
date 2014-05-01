@@ -1,0 +1,36 @@
+<project name="pretest-sandbox" default="test" basedir="." xmlns:sf="antlib:com.salesforce">
+
+    <property file="build.properties"/>
+    <property environment="env"/>
+
+    <target name="deployRunAllTests">
+      <sf:deploy username="${sf.username}" 
+        password="${sf.password}" 
+        serverurl="${sf.serverurl}" 
+        runAllTests="true"
+        logType="Detail"
+        deployRoot="src"
+        maxPoll="${sf.maxPoll}" />
+    </target>
+
+    <target name="deployRunNoTests">
+      <sf:deploy username="${sf.username}" 
+        password="${sf.password}" 
+        serverurl="${sf.serverurl}" 
+        runAllTests="false"
+        logType="Detail"
+        deployRoot="src"
+        maxPoll="${sf.maxPoll}" />
+    </target>
+
+    <target name="retrieve">
+      <!-- Retrieve the contents into another directory -->
+      <sf:retrieve username="${sf.username}" 
+        password="${sf.password}" 
+        serverurl="${sf.serverurl}" 
+        maxPoll="${sf.maxPoll}" 
+        retrieveTarget="src" 
+        unpackaged="src/package.xml"/>
+    </target>  
+
+</project>

@@ -58,6 +58,10 @@ public with sharing class BoxAPIv2 {
     return (BoxObject2.FolderFile)JSON.deserialize(getBoxResponse('GET', '/file/' + fileId), BoxObject2.FolderFile.class);    
   }
 
+  public static void deleteFile(String fileId) {
+    getBoxResponse('DELETE', '/files/' + fileId);
+  }
+
   public static BoxObject2.Collaboration addCollaboration(String folderId, String email, String role) {
   	String payload = '{"item": { "id": "' + folderId + '", "type": "folder"}, "accessible_by": { "login": "' + email + '", "type": "user" }, "role": "' + role + '"}';
   	return (BoxObject2.Collaboration)JSON.deserialize(getBoxResponse('POST', '/collaborations', payload), BoxObject2.Collaboration.class);

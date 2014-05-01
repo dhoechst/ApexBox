@@ -4,7 +4,6 @@
         <members>BoxAPIv2</members>
         <members>BoxAPIv2Test</members>
         <members>BoxAuth</members>
-        <members>BoxAuthController</members>
         <members>BoxAuthTest</members>
         <members>BoxException</members>
         <members>BoxMockHttpResponse</members>
